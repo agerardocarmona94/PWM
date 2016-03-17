@@ -2,7 +2,7 @@
 
 module Frec_175k_6(
     input clk,
-    input rst,
+    input rst,						//igual que el de 25kHz
     output reg output_175k
     );
 	 

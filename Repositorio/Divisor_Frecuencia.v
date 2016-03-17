@@ -1,9 +1,9 @@
 `timescale 1ns / 1ps
 
-module Divisor_Frecuencia(
-    input wire clk,
-    input wire rst,
-    output wire output_25k,
+module Divisor_Frecuencia(	 //se definen entradas y salidas del modulos 		
+    input wire clk,  		 //entrada de clk y reset
+    input wire rst,			 //salidas de cada una de las frecuencias 
+    output wire output_25k, 
     output wire output_50k,
     output wire output_75k,
     output wire output_100k,
@@ -12,8 +12,10 @@ module Divisor_Frecuencia(
     output wire output_175k,
     output wire output_200k
     );
-
-Frec_25k_0 Frec_25k_0 (
+ 
+ 
+ 
+Frec_25k_0 Frec_25k_0 (       //instanciaciones de los modulos de cada una de las frecuencias 
     .clk(clk), 
     .rst(rst), 
     .output_25k(output_25k)

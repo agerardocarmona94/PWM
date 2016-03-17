@@ -1,36 +1,36 @@
 `timescale 1ns / 1ps
 
-module Decodificador_F_I(
-    input [4:0] Corriente,
-    input [2:0] Frecuencia,
-    input selector_F_I,//0->Frec, 1->I
+module Decodificador_F_I(  //en este bloque se decodifica el dato como frecuencia a corriente para poder mostrarlo en los displays
+    input [4:0] Corriente, //recibe la cuenta del contador de corriente 
+    input [2:0] Frecuencia, //recibe la cuenta del contador de frecuencia
+    input selector_F_I,//0->Frec, 1->corriente
     output reg [15:0] dato_Hx//Bits necesarios para usar 4 displays
 
     );
 always  @*
 begin
-if (selector_F_I==0)//Frec
+if (selector_F_I==0)//si se selecciona frecuencia 
 	begin
-	case(Frecuencia)
-		0: dato_Hx =15'h0025;
-		1: dato_Hx =15'h0050;
-		2: dato_Hx =15'h0075;
-		3: dato_Hx =15'h0100;
-		4: dato_Hx =15'h0125;
-		5: dato_Hx =15'h0150;
-		6: dato_Hx =15'h0175;
-		7: dato_Hx =15'h0200;
+	case(Frecuencia)        //se decodifica el numero del contador con el valor correspondiente de frecuencia 
+		0: dato_Hx =15'h0025; //25kHz
+		1: dato_Hx =15'h0050; //50kHz
+		2: dato_Hx =15'h0075; //75kHz
+		3: dato_Hx =15'h0100; //100kHz
+		4: dato_Hx =15'h0125; //125kHz
+		5: dato_Hx =15'h0150; //150kHz
+		6: dato_Hx =15'h0175; //175kHz
+		7: dato_Hx =15'h0200; //200kHz
 	endcase
 	end
 	
-else if (selector_F_I==1)//I
+else if (selector_F_I==1)//si se selecciona frecuencia 
 	begin
-	case(Corriente)
+	case(Corriente) //se decodifica el numero del contador con el valor correspondiente de corriente
 		0: dato_Hx =15'h0000;
 		1: dato_Hx =15'h0031;
 		2: dato_Hx =15'h0062;
 		3: dato_Hx =15'h0094;
-		4: dato_Hx =15'h0125;
+		4: dato_Hx =15'h0125;					//el numero corresponde con la a¿cantidad de amperes de corriente
 		5: dato_Hx =15'h0156;
 		6: dato_Hx =15'h0187;
 		7: dato_Hx =15'h0219;

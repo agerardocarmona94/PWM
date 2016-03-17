@@ -1,8 +1,8 @@
 `timescale 1ns / 1ps
 
-module Decodificador_Corriente(
-    input [4:0] contador_I,
-    output reg [9:0] cuenta_max
+module Decodificador_Corriente( //en este bloque se decodifica la cuenta del contador de corriente y se relaciona con su valor correspondiente de corriente o ciclo de trabajo del PWM
+    input [4:0] contador_I,//entrada del contador de corriente
+    output reg [9:0] cuenta_max //cuenta maxima que define cual será el ciclo de trabajo en el bloque de comparacion posterior
     );
 
 always @*

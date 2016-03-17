@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 
 module Frec_200k_7(
-    input clk,
+    input clk,					//igual que el de 25kHz
     input rst,
     output reg output_200k
     );

@@ -2,7 +2,7 @@
 
 module Frec_50k_1(
     input clk,
-    input rst,
+    input rst,      //igual que el de 25kHz
     output reg output_50k
     );
 

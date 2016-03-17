@@ -1,28 +1,10 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date:    11:00:37 03/15/2016 
-// Design Name: 
-// Module Name:    FF_0 
-// Project Name: 
-// Target Devices: 
-// Tool versions: 
-// Description: 
-//
-// Dependencies: 
-//
-// Revision: 
-// Revision 0.01 - File Created
-// Additional Comments: 
-//
-//////////////////////////////////////////////////////////////////////////////////
-module FF_0(
+
+module FF_0(     //declaracion de entradas y salidas del Flip Flop
 	input ck,d,
 	output reg q
 	);
 	
-always @ (posedge ck )
-	q <= d;
+always @ (posedge ck )    
+	q <= d;						//pone la entrada en la salida con un flanco positivo de reloj
 endmodule 
